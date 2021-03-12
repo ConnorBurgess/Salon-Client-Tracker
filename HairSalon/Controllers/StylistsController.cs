@@ -21,7 +21,7 @@ namespace HairSalon.Controllers
       List<Stylist> model = _db.Stylists.ToList();
       return View(model);
     }
-    
+
     public ActionResult Create()
     {
       return View();
@@ -67,6 +67,11 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    public ActionResult Find()
+    {
+      return View();
+    }
+
+
   }
-  
-}
+  }
