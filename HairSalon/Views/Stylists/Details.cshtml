@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+@using HairSalon.Models;
+@model HairSalon.Models.Stylist;
+
+<h2>Stylist Details</h2>
+<hr />
+<h3>Stylist: @Html.DisplayFor(model => model.Name)<h3>
+
+  @if (@Model.Stylists.Count == 0)
+  {
+    <p>No stylists added to tracker</p>
+  }
+
+@* <ul>
+  @foreach (Client client in @Model.Clients)
+  {
+    <li>Restaurant Name: @client.Name</li>
+  }
+</ul> *@
+
+<p>@Html.ActionLink("Edit Cuisine", "Edit", new { id = Model.Id })</p>
+<p>@Html.ActionLink("Delete Cuisine", "Delete", new { id = Model.Id })</p>
+<p>@Html.ActionLink("Back to list", "Index")</p>
