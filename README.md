@@ -26,10 +26,25 @@ Project creates a client tracking solution for salon businesses to keep track of
 ## Setup 1) Initial Setup
 * Ensure .Net v5.0 Core is installed: [download here](https://dotnet.microsoft.com/download/dotnet/5.0)
 * Ensure dotnet script is installed: [instructions here](https://github.com/filipw/dotnet-script)
-* Clone Repo from GitHub (Link: )
+* Clone Repo from GitHub (Link: https://github.com/ConnorBurgess/Salon-Client-Tracker.git)
 
 ## Setup 2) Database Setup
-* 
+* Ensure MySQL is installed [download here](https://www.mysql.com/)
+* Ensure MySQL Workbench is installed [download here](https://www.mysql.com/products/workbench/)
+* Open MySqlWorkBench and click administration tab
+* Click data Import/Restore and check the "Import from Self-Contained File" tab
+* Select the included .sql file from top level of clonend project directory
+* Copy and paste the following into the file:
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=connor_burgess;uid={YOUR UID};pwd={YOUR PWD;"
+  }
+}
+* Input your UID and password from MYSQL database setup and remove curly braces from around pwd/UID. Please note your port may be different.
+* If you plan to push a project to GitHub, you should avoid revealing sensitive details by [setting up a .gitignore](https://docs.github.com/en/github/using-git/ignoring-files) and ignoring this file.
+
+## Setup 3) Create appsettings.json
+* In root directory of project create a file called "appsettings.json"
 ## Setup 3) Dotnet Setup & Running Program
 * Navigate to ./SalonTracker/HairSalon inside of the cloned repo and type $"dotnet restore" (no bling / quotes) in terminal
 * In order to run program input $"dotnet run" (no bling / quotes) in terminal
