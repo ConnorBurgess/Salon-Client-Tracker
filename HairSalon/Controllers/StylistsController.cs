@@ -69,9 +69,25 @@ namespace HairSalon.Controllers
     }
     public ActionResult Find()
     {
-      return View();
+      Stylist model = new Stylist();
+      return View(model);
     }
 
+    [HttpPost, ActionName("Find")]
+    public ActionResult Find(string newString)
+    {
+      Stylist model = new Stylist();
+    //       try
+    // {
+        var thisStylist = _db.Stylists.FirstOrDefault(p => p.Name == newString);
+    int test = 3;
+    // }
+    // catch (Exception e)
+    // {
+    //     Console.WriteLine("Exception thrown {0}", e.Message);
+    // }
+     return RedirectToAction("details" + "/" + test);
+    }
 
   }
-  }
+}
