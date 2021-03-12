@@ -16,10 +16,10 @@
 @* <ul>
   @foreach (Client client in @Model.Clients)
   {
-    <li>Restaurant Name: @client.Name</li>
+    <li>Client Name: @client.Name</li>
   }
 </ul> *@
 
-<p>@Html.ActionLink("Edit Cuisine", "Edit", new { id = Model.Id })</p>
-<p>@Html.ActionLink("Delete Cuisine", "Delete", new { id = Model.Id })</p>
+<p>@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
+<p>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
 <p>@Html.ActionLink("Back to list", "Index")</p>
