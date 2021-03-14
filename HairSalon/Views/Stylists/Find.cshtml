@@ -2,12 +2,13 @@
   Layout = "_Layout";
 }
 @using HairSalon.Models;
-@model HairSalon.Models.Stylist
+@using System;
 
 <h4>Search for Stylist:</h4>
-<form method="POST">
-    <label for="stylistName">Stylist Name</label>
-    <input type="text" id="stylistName" placeholder="stylist name" />
-    <input type="submit" />
-</form>
+@using (Html.BeginForm())
+@System.Console.WriteLine(model);
+{
+  @Html.TextBox("stylistName");
+  <input type="submit" value="Search Stylist">
+}
 <p>@Html.ActionLink("Back to Stylists", "Index")</p>
