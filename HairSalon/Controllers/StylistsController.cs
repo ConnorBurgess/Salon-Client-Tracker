@@ -70,6 +70,7 @@ namespace HairSalon.Controllers
     }
     public ActionResult Find(int error)
     {
+      ViewBag.Error = error;
       return View(error);
     }
 
@@ -77,15 +78,16 @@ namespace HairSalon.Controllers
     public ActionResult Find(string stylistName)
     {
       List<Stylist> model = _db.Stylists.ToList();
-      try {
-      var thisStylist = _db.Stylists.First(stylist => stylist.Name == stylistName).StylistId;
-      return RedirectToAction("Details", new { id = thisStylist });
+      try
+      {
+        var thisStylist = _db.Stylists.First(stylist => stylist.Name == stylistName).StylistId;
+        return RedirectToAction("Details", new { id = thisStylist });
       }
-      catch {
-      return RedirectToAction("Find", new { error = 1});
+      
+      catch
+      {
+        return RedirectToAction("Find", new { error = 1 });
       }
-      // return (thisStylist.GetType() == 1.GetType() ? RedirectToAction("Details", new { id = thisStylist }) 
-      //  : RedirectToAction("Index"));
     }
 
   }

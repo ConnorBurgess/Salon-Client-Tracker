@@ -5,8 +5,9 @@
 @using System;
 
 <h4>Search for Stylist:</h4>
+@(ViewBag.Error == 1 ? "No Stylist found. Please revise search criteria." : "Please submit a search")
 @using (Html.BeginForm())
-@System.Console.WriteLine(model);
+
 {
   @Html.TextBox("stylistName");
   <input type="submit" value="Search Stylist">
