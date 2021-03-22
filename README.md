@@ -3,13 +3,14 @@
 * * *
 
 ## Description  
-Project creates a client tracking solution for salon businesses to keep track of separate stylist-client relationships. Utilizes ASP.Net Core MVC and follows RESTful practices. Utilizes object relationship mapping through Entity Framework Core in order to simplify SQL queries.
+Project creates a client tracking solution for salon businesses to keep track of separate stylist-client relationships. Utilizes .Net v5.0 and follows RESTful practices. Relational data is manipulated using ORM through Entity Framework Core in order to abstract and simplify SQL interaction. 
 
 * * *
 
 ## Technologies used
 * C#
-* .Net Core v5.0
+* .Net v5.0
+* ASP.NET Core
 * Entity Framework Core
 * RESTful Routing
 * HTML
