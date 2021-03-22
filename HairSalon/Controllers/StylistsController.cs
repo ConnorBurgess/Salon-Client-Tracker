@@ -36,7 +36,6 @@ namespace HairSalon.Controllers
     }
     public ActionResult Details(int id)
     {
-      System.Console.WriteLine(id);
       Stylist thisStylist = _db.Stylists.FirstOrDefault(Stylist => Stylist.StylistId == id);
       return View(thisStylist);
     }
@@ -68,7 +67,7 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-    public ActionResult Find(int error)
+    public ActionResult Find(int error, List<Stylist> model)
     {
       ViewBag.Error = error;
       return View(error);
@@ -80,13 +79,13 @@ namespace HairSalon.Controllers
       List<Stylist> model = _db.Stylists.ToList();
       try
       {
-        var thisStylist = _db.Stylists.First(stylist => stylist.Name == stylistName).StylistId;
+        var thisStylist = _db.Stylists.Single(stylist => stylist.Name == stylistName).StylistId;
         return RedirectToAction("Details", new { id = thisStylist });
       }
-      
+
       catch
       {
-        return RedirectToAction("Find", new { error = 1 });
+        return RedirectToAction("Find", new { error = 1, model });
       }
     }
 

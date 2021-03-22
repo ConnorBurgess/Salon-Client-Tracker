@@ -10,9 +10,9 @@ Project creates a client tracking solution for salon businesses to keep track of
 ## Technologies used
 * C#
 * .Net Core v5.0
-* ASP.Net Core MVC
 * Entity Framework Core
 * RESTful Routing
+* HTML
 * CSS
 * * *
 
@@ -33,7 +33,10 @@ Project creates a client tracking solution for salon businesses to keep track of
 * Ensure MySQL Workbench is installed [download here](https://www.mysql.com/products/workbench/)
 * Open MySqlWorkBench and click administration tab
 * Click data Import/Restore and check the "Import from Self-Contained File" tab
-* Select the included .sql file from top level of clonend project directory
+* Select the included .sql file from top level of cloned project directory and import
+
+## Setup 3) Create appsettings.json
+* In root directory of project create a file called "appsettings.json"
 * Copy and paste the following into the file:
 {
   "ConnectionStrings": {
@@ -41,10 +44,8 @@ Project creates a client tracking solution for salon businesses to keep track of
   }
 }
 * Input your UID and password from MYSQL database setup and remove curly braces from around pwd/UID. Please note your port may be different.
-* If you plan to push a project to GitHub, you should avoid revealing sensitive details by [setting up a .gitignore](https://docs.github.com/en/github/using-git/ignoring-files) and ignoring this file.
+* If planning to push a project to GitHub, it is advised to avoid revealing sensitive details by [setting up a .gitignore](https://docs.github.com/en/github/using-git/ignoring-files) and ignoring this file.
 
-## Setup 3) Create appsettings.json
-* In root directory of project create a file called "appsettings.json"
 ## Setup 3) Dotnet Setup & Running Program
 * Navigate to ./SalonTracker/HairSalon inside of the cloned repo and type $"dotnet restore" (no bling / quotes) in terminal
 * In order to run program input $"dotnet run" (no bling / quotes) in terminal
